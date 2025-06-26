@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-**E-Commerce_Site_Price_Tracker_&_Reporter** is a Selenium automation framework that has multiple auomation functionalities like log into a e_commerce website and extract information of a list of products with their prices 
+**E-Commerce_Site_Price_Tracker_&_Reporter** is a Selenium automation framework that has multiple auomation functionalities like login into a e_commerce website and extract information of a list of products with their prices 
 and store data in a excel file following the good code strucure and hygiene.
 ---
 
