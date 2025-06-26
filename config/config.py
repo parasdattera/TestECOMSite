@@ -7,9 +7,9 @@ env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
 # variables read from env
-URL: str = os.getenv("URL", "https://default-url.com")
-USERNAME: str = os.getenv("USERNAME", "default_user")
-PASSWORD: str = os.getenv("PASSWORD", "default_password")
+URL: str = os.getenv("URL", "https://www.saucedemo.com/")
+USERNAME: str = os.getenv("USERNAME", "standard_user")
+PASSWORD: str = os.getenv("PASSWORD", "secret_sauce")
 INVALID_PASSWORD: str = os.getenv("INVALID_PASSWORD", "wrong_password")
 
 # raising exception if missing!
