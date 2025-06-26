@@ -1,10 +1,19 @@
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv(dotenv_path="../.env")
+# load the env file variable from .env
+env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(dotenv_path=env_path)
 
-URL = os.getenv("URL")
-USERNAME = os.getenv("USERNAME")
-PASSWORD = os.getenv("PASSWORD")
-INVALID_PASSWORD = os.getenv("INVALID_PASSWORD") 
+# variables read from env
+URL: str = os.getenv("URL", "https://default-url.com")
+USERNAME: str = os.getenv("USERNAME", "default_user")
+PASSWORD: str = os.getenv("PASSWORD", "default_password")
+INVALID_PASSWORD: str = os.getenv("INVALID_PASSWORD", "wrong_password")
 
+# raising exception if missing!
+required_vars = {"URL": URL, "USERNAME": USERNAME, "PASSWORD": PASSWORD}
+missing = [key for key, value in required_vars.items() if not value]
+if missing:
+    raise EnvironmentError(f"Missing required environment variables: {', '.join(missing)}")
